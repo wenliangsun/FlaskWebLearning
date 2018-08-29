@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}Flasky - Login{% endblock %}
+
+{% block page_content %}
+<div class="page-header" style="background-color: lightgray">
+    <h1>Register</h1>
+</div>
+<div class="col-md-4" style="background-color: lightgoldenrodyellow">
+    {{wtf.quick_form(form)}}
+</div>
+{% endblock %}

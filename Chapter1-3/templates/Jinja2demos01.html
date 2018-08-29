@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jinja2</title>
+</head>
+<body>
+<p>A value from a dictionary: {{mydict['key'}}</p>
+<p>a Value form a list:{{mylist[3]}}</p>
+<p>a value form a list,with a variable index: {{mylist[myintvar]}}</p>
+<p>A value form a object's method : {{myobj.somemethod()}}</p>
+
+
+{% if user %}
+Hello,{{user}}!
+{% else %}
+Hello,Stranger!
+{% endif %}
+
+<ul>
+    {% for comment in comments %}
+    <li>{{comment}}</li>
+    {% endfor %}
+</ul>
+
+{% macro render_comment(comment) %}
+<li>{{comment}}</li>
+{% endmacro %}}
+<ul>
+    {% for comment in comments %}
+        {{render_comment(comment)}}
+    {% endfor %}
+</ul>
+
+{% import 'macro.html' ad macro %}
+<ul>
+    {% for comment in comments %}
+        {{macro.render_comment(comment)}}
+    {% endfor %}
+</ul>
+
+{% include 'common.html' %}}
+
+
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Flasky{% endblock %}
+
+{% block page_content %}
+<div class="page-header" style="font-size: 22px;background-color: lightgray">
+    <h1>Hello, {% if current_user.is_authenticated %}{{current_user.username}} !{% else %} Stranger !{% endif %}</h1>
+    <!--{% if not know %}-->
+    <!--<p>Pleased to meet you!</p>-->
+    <!--{% else %}-->
+    <!--<p>Happy to see you again!</p>-->
+    <!--{% endif %}-->
+</div>
+<div style="background-color: lightgoldenrodyellow">
+    {{wtf.quick_form(form)}}
+    {% endblock %}
+</div>
+
+
+{% block scripts %}
+{{super()}}
+{% endblock %}
+
